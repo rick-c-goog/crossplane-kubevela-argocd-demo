@@ -8,7 +8,7 @@ metadata:
 spec:
   compositionSelector:
     matchLabels:
-      provider: GCP
+      provider: provider-gcp
   id: platform-ref-gcp-cluster
   parameters:
     nodes:
