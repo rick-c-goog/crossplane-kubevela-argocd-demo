@@ -72,7 +72,7 @@ spec:
             - machineType: e2-medium
               oauthScopes:
                 - https://www.googleapis.com/auth/cloud-platform
-              serviceAccount: 261832825633-compute@developer.gserviceaccount.com
+              serviceAccount: 873051588019-compute@developer.gserviceaccount.com
               nodeLocations: 
                 - us-central1-a
     patches:
