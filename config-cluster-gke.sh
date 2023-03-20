@@ -1,9 +1,9 @@
 export TEAM_NAME=$1
 
 export CLUSTER_NAME=$(\
-    kubectl get clusters \
-    --selector crossplane.io/composite=$TEAM_NAME \
-    --output jsonpath="{.items[0].metadata.name}")
+    kubectl get composite \
+    --selector app.kubernetes.io/instance=$TEAM_NAME \
+    --output jsonpath="{.items[0].status.clusterName}")
 
 export KUBECONFIG=$PWD/kubeconfig.yaml
 
@@ -13,12 +13,11 @@ touch $TEAM_NAME-apps/dummy
 
 cp -R team-app-reqs $TEAM_NAME-app-reqs
 
-aws eks --region us-east-1 \
-    update-kubeconfig \
-    --name $CLUSTER_NAME
+gcloud container clusters get-credentials $CLUSTER_NAME --zone=us-central1-a
 
 kubectl create namespace production
 
+argocd login localhost:8080 --insecure --username admin --password $PASS
 argocd cluster add \
     $(kubectl config current-context) \
     --name $TEAM_NAME
