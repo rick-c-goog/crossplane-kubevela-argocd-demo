@@ -8,7 +8,7 @@ spec:
     name: cluster-gcp-gke
   parameters:
     # Possible values small, medium, large
-    nodeSize: medium
+    nodeSize: small
     k8sVersion: "1.25"
     fleetProject: "873051588019"
     minNodeCount: 0
