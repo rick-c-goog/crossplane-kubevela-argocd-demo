@@ -11,7 +11,7 @@ spec:
     nodeSize: medium
     k8sVersion: "1.25"
     fleetProject: "873051588019"
-    minNodeCount: 2
+    minNodeCount: 0
     adminUsers:
     - admin@rickruguichen.altostrat.com  
   writeConnectionSecretToRef:
