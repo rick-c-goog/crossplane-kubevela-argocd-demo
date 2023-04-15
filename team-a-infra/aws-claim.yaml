@@ -1,11 +1,11 @@
 apiVersion: demo.anthos.com/v1
 kind: CompositeCluster 
 metadata:
-  name: gke-test-cluster
+  name: aws-test-cluster
 spec:
   compositionRef:
     # Possible values cluster-gcp-gke, cluster-aws-eks, cluster-azure-aks
-    name: cluster-gcp-gke
+    name: cluster-aws-eks
   parameters:
     # Possible values small, medium, large
     nodeSize: small
